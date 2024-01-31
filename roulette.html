@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>룰렛</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #roulette {
+            position: relative;
+            width: 850px;
+            height: 850px;
+            border-radius: 50%;
+            background-color: #ffc107;
+            overflow: hidden;
+            animation: spin 4s ease-out;
+        }
+
+        .option {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(50% 50%, 0 0, 0 100%);
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(45deg);
+            }
+            100% {
+                transform: rotate(720deg);
+            }
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="roulette">
+        <div class="option" style="background-color: whitesmoke; transform: rotate(0deg);"></div>
+        <div class="option" style="background-color: #3498db; transform: rotate(45deg);"></div>
+        <div class="option" style="background-color: #2ecc71; transform: rotate(90deg);"></div>
+        <div class="option" style="background-color: #f39c12; transform: rotate(135deg);"></div>
+        <div class="option" style="background-color: #9b59b6; transform: rotate(180deg);"></div>
+        <div class="option" style="background-color: #1abc9c; transform: rotate(225deg);"></div>
+        <div class="option" style="background-color: #34495e; transform: rotate(270deg);"></div>
+        <div class="option" style="background-color: #050505; transform: rotate(315deg);"></div>
+    </div>
+
+    <div id="result"></div>
+
+    <script>
+        const roulette = document.getElementById('roulette');
+        const resultDiv = document.getElementById('result');
+
+        roulette.addEventListener('animationend', () => {
+            const options = [
+                '보라카이',
+                '몰디브',
+                '괌',
+                '발리',
+                '삿포로',
+                '다낭',
+                '하노이',
+                '하와이'
+            ];
+
+            const randomIndex = Math.floor(Math.random() * options.length);
+            const result = options[randomIndex];
+
+            resultDiv.textContent = `Result: ${result}`;
+        });
+        
+    </script>
+    <hr>
+    <input type=button value="돌아가기" onClick="history.back();">
+
+</body>
+</html>

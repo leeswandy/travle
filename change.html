@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>환전</title>
+    <link rel="stylesheet" href="changr.css">
+</head>
+<body>
+    <div class="page">
+        <div>
+        <h1 class="title">세계로운 환전여행</h1>
+        <div class="exchange-box">
+            <div class="dropdown">
+                <button class="dropbtn" id="from-button"><img class="flag" src="./images/down.png" width="18px" height="12px">USD</button>
+                <ul class="dropdown-content" id="from-currency-list">
+                <li><a href="#"><img class="flag" src="./images/us.png" width="18px" height="12px">USD</a></li>
+                    <li><a href="#"><img class="flag" src="./images/kor.png" width="18px" height="12px">KRW</a></li>
+                    <li><a href="#"><img class="flag" src="./images/jap.png" width="18px" height="12px">JPY</a></li>
+                <li><a href="#"><img class="flag" src="./images/vnd.png" width="18px" height="12px">VND</a></li>
+                </ul>
+            </div>
+            <div class="input-area">
+                <input type="number" id="from-input" onkeyup="convert()" placeholder="금액을 입력하세요">
+                <div id="fromNumToKorea" class="Number">달러</div>
+            </div>
+        </div>
+        <h1 class="simbol">=</h1>
+        <div class="exchange-box">
+            <div class="dropdown">
+                <button class="dropbtn" id="to-button"><img class="flag" src="./images/up2.png" width="18px" height="12px">USD</button>
+                <ul class="dropdown-content" id="to-currency-list">
+                    <li><a href="#"><img class="flag" src="./images/us.png" width="18px" height="12px">USD</a></li>
+                    <li><a href="#"><img class="flag" src="./images/kor.png" width="18px" height="12px">KRW</a></li>
+                    <li><a href="#"><img class="flag" src="./images/jap.png" width="18px" height="12px">JPY</a></li>
+                <li><a href="#"><img class="flag" src="./images/vnd.png" width="18px" height="12px">VND</a></li>
+                </ul>
+            </div>
+            <div class="input-area">
+                <input type="number" id="to-input" onkeyup="reconvert()">
+                <div id="toNumToKorea" class="Number">달러</div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    
+    <script src="./change.js"></script>
+</body>
